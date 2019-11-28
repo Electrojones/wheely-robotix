@@ -1,9 +1,18 @@
 import RPi.GPIO as GPIO
 import time
 
+servoPIN = 17
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(0, GPIO.OUT)
+GPIO.setup(servoPIN, GPIO.OUT)
 
-p = GPIO.PWM(0, 50)
-
-p.start(2.5)
+p = GPIO.PWM(servoPIN, 50) # GPIO 17 als PWM mit 50Hz
+p.start(2.5) # Initialisierung
+try:
+  while True:
+    print("cycle")
+    angle=float(input("enter angle"))
+    p.ChangeDutyCycle(angle)
+    time.sleep(0.5)
+except KeyboardInterrupt:
+  p.stop()
+  GPIO.cleanup()
