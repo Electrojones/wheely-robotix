@@ -33,7 +33,6 @@ def get_marker_pos():
                 y_coll.append(y)
 
     #calculate the center of blue in the image
-
     y_cen=sum(y_coll)/len(y_coll)
     x_cen=sum(x_coll)/len(x_coll)
 
