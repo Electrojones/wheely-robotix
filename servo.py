@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 #where the servos are attached
-servopins=[17, 27, 22]
+servopins=[15, 11, 16, 13, 18, 22]
 
 #servos as object
 servos=[]
@@ -28,11 +28,12 @@ def set_servos(angles):
         print(angle)
         #set the values
         servo.ChangeDutyCycle(angle)
-        time.sleep(0.5)
 
 #give an array of servo-values-sets
-def set_servos_array(angle_set_array):
-    pass
+def set_servos_array(angle_set_array, wait_time):
+    for angles in angle_set_array:
+        set_servos(angles)
+        time.sleep(wait_time)   
 
 def end():
     p.stop()
