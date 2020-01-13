@@ -14,7 +14,7 @@ for pin in servopins:
     p = GPIO.PWM(pin, 50)
     p.start(7)
     servos.append(p)
-    time.sleep(0.3)
+    time.sleep(0.1)
 
 #give an array of 3 values to this function to adjust the angles of the servos
 def set_servos(angles):
@@ -27,7 +27,7 @@ def set_servos(angles):
         if angle < 3:
             angle=3
         
-        time.sleep(0.3)
+        time.sleep(0.1)
 
         #set the values
         servo.ChangeDutyCycle(angle)
