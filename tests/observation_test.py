@@ -5,7 +5,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 import cv2
 
-r=requests.get("http://192.168.2.103:8080/shot.jpg")
+r=requests.get("http://192.168.2.111:8080/shot.jpg")
 
 #print(r.content)
 
