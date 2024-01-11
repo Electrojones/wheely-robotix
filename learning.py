@@ -25,7 +25,7 @@ class control_agent:
 
 
 
-"""returns an array of new agents"""
+#returns an array of new agents
 
 def create_pop(pop_size, length, number_of_servos, value_range):
     pop=[]
